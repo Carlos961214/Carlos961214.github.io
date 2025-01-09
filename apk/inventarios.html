@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Inventarios</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0Oe2X0f3bb0yK5RpNc8d7ih5N9DsaQ+iFsNSE"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h1><i class="fas fa-pills"></i> Control de Inventarios</h1>
+    </header>
+    <main>
+      <section id="scanner">
+        <button class="btn primary-btn" onclick="startScanner()">
+          Escanear Código de Barras
+        </button>
+        <div id="interactive" class="viewport"></div>
+        <input
+          type="text"
+          id="barcode"
+          placeholder="Código de Barras"
+          readonly
+        />
+        <input type="text" id="name" placeholder="Nombre del Medicamento" />
+        <input type="date" id="expiry-date" />
+        <input type="text" id="location" placeholder="Ubicación" />
+        <button class="btn secondary-btn" onclick="addItem()">
+          Añadir al Inventario
+        </button>
+      </section>
+      <section id="inventory">
+        <h2><i class="fas fa-warehouse"></i> Inventario</h2>
+        <table id="inventory-table">
+          <thead>
+            <tr>
+              <th>Código de Barras</th>
+              <th>Nombre</th>
+              <th>Fecha de Vencimiento</th>
+              <th>Ubicación</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los items del inventario aparecerán aquí -->
+          </tbody>
+        </table>
+      </section>
+      <button class="btn export-btn" onclick="exportToExcel()">
+        Exportar a Excel
+      </button>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
